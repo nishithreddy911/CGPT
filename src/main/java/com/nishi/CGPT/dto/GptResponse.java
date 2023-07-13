@@ -11,6 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 public class GptResponse {
 
-    private List<Choice> choices;
+    private List<UriObj> data;
 
 }

@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Choice {
-    private int index;
-    private Message message;
+public class UriObj {
+    private String url;
 }

@@ -17,8 +17,13 @@ public class GptService {
     private String gptUrl;
 
     public String getResponse(String prompt){
-        UserRequest request = new UserRequest("gpt-3.5-turbo",prompt);
+        UserRequest request = new UserRequest(prompt,2,"1024x1024");
         GptResponse response = template.postForObject(gptUrl,request,GptResponse.class);
-        return response.getChoices().get(0).getMessage().getContent();
+        System.out.println(response.toString());
+        if(response == null || response.toString().equals("")){
+            return "No response";
+        }
+        else return response.getData().get(0).getUrl();
+
     }
 }
